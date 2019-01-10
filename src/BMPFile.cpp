@@ -68,7 +68,7 @@ BMPFile* BMPFile::newImage(int width, int height){
 
 void BMPFile::writeToFile(char* file_name){
     std::ofstream out;
-    out.open(file_name);
+    out.open(file_name,std::fstream::binary);
 
     out.write((char*)file_header, sizeof(BitmapFileHeader));
     out.write((char*)info_header, sizeof(DIBHeader));
